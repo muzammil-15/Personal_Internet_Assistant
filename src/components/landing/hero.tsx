@@ -2,11 +2,14 @@
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
 
 
 type Props = {}
 
 const Hero = (props: Props) => {
+  const { isSignedIn } = useAuth();
   return (
     
     <div className="w-full  padding-X">
@@ -30,7 +33,9 @@ const Hero = (props: Props) => {
         Welcome to Your Personal <span className="text-[#F56565]">Internet Assistant!</span>
       </motion.h1>
         <p className="para max-w-[810px] text-center">Drowning in digital chaos? Get organized & conquer your day with our all-in-one app!</p>
+        <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
         <button className="border backdrop-blur-sm border-gray-500 border-opacity-50 py-2 px-4 md:py-2 md:px-6 flex justify-center items-center gap-1 hover:gap-2 transition-all ease-in-out duration-200 rounded-full font-semibold tracking-wide hover:border-opacity-70 hover:text-gray-200 "><span>Try for free</span> <span><ChevronRight color="#F56565" size={20} strokeWidth={3} className=""/></span></button>
+        </Link>
     </div>
     </HeroHighlight>
     </div>

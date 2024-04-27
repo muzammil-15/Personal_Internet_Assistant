@@ -1,10 +1,15 @@
+"use client"
+
+import { useAuth } from '@clerk/nextjs'
 import { Check, CheckCheck, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 type Props = {}
 
 const Features = (props: Props) => {
+  const { isSignedIn } = useAuth();
   return (
     <div className="w-full   paddingX">
       <div className="max-w-screen-xl my-20 mx-auto flex flex-col md:flex-row gap-10 justify-between items-center">
@@ -25,7 +30,9 @@ const Features = (props: Props) => {
                 <span className='text-gray-100 text-[12px] tracking-wide font-light'>Cancel anytime</span>
             </div>
         </div>
+        <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
         <button className="border w-max backdrop-blur-sm border-gray-500 border-opacity-50 py-3 px-4 md:py-2 md:px-6 flex justify-center items-center gap-1 hover:gap-2 transition-all ease-in-out duration-200 rounded-full font-semibold tracking-wide hover:border-opacity-70 hover:text-gray-200 "><span>Get Started</span> <span><ChevronRight color="#F56565" size={20} strokeWidth={3} className=""/></span></button>
+        </Link>
       </div>
       <div className='flex-1 flex justify-center items-center rounded-lg overflow-hidden'>
         <Image src={'/assests/smd.jpg'} width={600} height={600} alt='social' className='rounded-lg'/>

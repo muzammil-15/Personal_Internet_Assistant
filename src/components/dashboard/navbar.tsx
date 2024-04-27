@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { UserButton, useAuth } from "@clerk/nextjs";
 import { Pi } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -18,11 +18,7 @@ const Navbar = (props: Props) => {
           </span>
           <span className=" ">Assistant</span>
         </div>
-        <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-        <button className="border border-gray-500 border-opacity-50 py-2 px-6 rounded-full font-semibold tracking-wide hover:border-opacity-70 hover:text-gray-200">
-          {isSignedIn ?  'Sign In' : 'Sign Up'}
-        </button>
-        </Link>
+        <UserButton />
       </div>
     </div>
   );

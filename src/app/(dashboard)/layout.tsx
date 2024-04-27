@@ -1,3 +1,4 @@
+import Navbar from "@/components/dashboard/navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +12,10 @@ const layout = ({
     children: React.ReactNode;
   }>) => {
   return (
-    <div>this is dashboard{children}</div>
+    <div>
+      <Navbar/>
+      {children}
+    </div>
   )
 }
 
