@@ -8,13 +8,42 @@
   box-sizing: border-box;
 }
 body{
-  Background: radial-gradient(circle, #292e49, #212441);
+  /* Background: radial-gradient(circle, #292e49, #212441); */
+  Background: radial-gradient(circle, #141829, #0a0d22);
   color: white;
 }
 
-.heading{
-  color:  #FFFFFF;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #5c5c7b;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
+}
+
 
 .subheading{
   color: #A6A6A6 ;
@@ -26,4 +55,16 @@ body{
 
 .button{
   
+}
+
+@layer utilities {
+  .heading1 {
+    @apply text-[28px] font-bold leading-[30px] md:text-[36px] md:leading-[40px] lg:text-[48px] lg:leading-[52px] text-gray-200 ;
+  }
+  .para {
+    @apply text-[14px] font-normal md:text-[18px]  text-gray-200 ;
+  }
+  .paddingX{
+    @apply px-5 md:px-8 lg:px-20;
+  }
 }

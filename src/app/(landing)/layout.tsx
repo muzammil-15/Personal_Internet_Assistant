@@ -1,5 +1,3 @@
-import Navbar from "@/components/ui/landing/navbar";
-
 
 const layout = ({
     children,
@@ -7,10 +5,10 @@ const layout = ({
     children: React.ReactNode;
   }>) => {
   return (
-    <div>
-      <Navbar/>
-      {children}
-      </div>
+    <>
+      
+      {children} 
+    </>
   )
 }
 

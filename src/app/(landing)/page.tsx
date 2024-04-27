@@ -1,10 +1,21 @@
-import Image from "next/image";
+import { Cards } from "@/components/landing/cards";
+import Features from "@/components/landing/features";
+import Footer from "@/components/landing/footer";
+import Hero from "@/components/landing/hero";
+import Navbar from "@/components/landing/navbar";
+
 
 export default function Home() {
   return (
     
-<main>Landing page
-  <button >button</button>
-</main> 
+<>
+<Navbar/>
+<Hero/>
+
+<Cards/>
+<Features/>
+<Footer/>
+  
+</> 
  );
 }
